@@ -1,0 +1,117 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-neutral-border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: 32px;
+}
+
+.wordmark {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-ink);
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+/* Desktop nav */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navLink {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--color-neutral-muted);
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: var(--color-ink);
+  background: var(--color-primary-50);
+}
+
+.navLinkDisabled {
+  color: var(--color-neutral-slate);
+  cursor: default;
+  opacity: 0.6;
+}
+.navLinkDisabled:hover {
+  background: none;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  color: var(--color-ink);
+  transition: background 0.15s;
+}
+.hamburger:hover {
+  background: var(--color-primary-50);
+}
+
+/* Mobile drawer */
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 24px 24px;
+  border-top: 1px solid var(--color-neutral-border);
+  background: #fff;
+}
+
+.mobileLink {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-neutral-muted);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-neutral-border);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.mobileLink:hover {
+  color: var(--color-ink);
+}
+
+.mobileLinkDisabled {
+  color: var(--color-neutral-slate);
+  opacity: 0.6;
+  cursor: default;
+}
+
+.mobileCta {
+  margin-top: 20px;
+}
+
+/* Breakpoints */
+@media (max-width: 768px) {
+  .desktopNav { display: none; }
+  .hamburger  { display: flex; }
+}
+
+@media (min-width: 769px) {
+  .mobileNav { display: none; }
+}
