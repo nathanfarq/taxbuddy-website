@@ -1,0 +1,17 @@
+.page {
+  background: linear-gradient(180deg, var(--color-primary-50) 0%, #fff 100%);
+  min-height: calc(100vh - 64px);
+}
+
+.headline {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 400;
+  color: var(--color-ink);
+  margin-bottom: 16px;
+}
+
+.subhead {
+  font-size: 17px;
+  color: var(--color-neutral-slate);
+}
