@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
+import { getPostMetas } from '@/lib/blog';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -21,6 +23,8 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  const posts = getPostMetas();
+
   return (
     <>
       <NavBar />
@@ -29,9 +33,18 @@ export default function BlogPage() {
           <div className="container">
             <p className="label" style={{ marginBottom: 16 }}>Blog</p>
             <h1 className={styles.headline}>Insights from TaxBuddy</h1>
-            <p className={styles.subhead}>
-              Tax season insights, product updates, and news. Coming soon.
-            </p>
+            {posts.length > 0 && (
+              <div className={styles.grid}>
+                {posts.map((post) => (
+                  <Link key={post.slug} href={`/blog/${post.slug}`} className={styles.card}>
+                    <p className={styles.cardCategory}>{post.category}</p>
+                    <h2 className={styles.cardTitle}>{post.title}</h2>
+                    <p className={styles.cardExcerpt}>{post.excerpt}</p>
+                    <p className={styles.cardDate}>{post.date}</p>
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
         </section>
       </main>
