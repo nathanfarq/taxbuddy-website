@@ -5,9 +5,24 @@ import CTABanner from '@/components/CTABanner';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'About — TaxBuddy',
+  title: 'About TaxBuddy — Built for Canadian Tax Firms',
   description:
-    'TaxBuddy was built by a Canadian accounting student who spent a season inside a firm and saw the coordination problem firsthand.',
+    'TaxBuddy was built by a Canadian accounting student who saw the coordination problem firsthand. Learn our mission: give Canadian accounting firms their capacity back.',
+  keywords: ['Canadian tax firms', 'T1 software', 'AI tax preparation'],
+  alternates: { canonical: '/about' },
+  openGraph: {
+    title: 'About TaxBuddy — Built for Canadian Tax Firms',
+    description:
+      'TaxBuddy was built by a Canadian accounting student who saw the coordination problem firsthand. Learn our mission: give Canadian accounting firms their capacity back.',
+    url: '/about',
+    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About TaxBuddy — Built for Canadian Tax Firms',
+    description:
+      'TaxBuddy was built by a Canadian accounting student who saw the coordination problem firsthand. Learn our mission: give Canadian accounting firms their capacity back.',
+  },
 };
 
 const VALUES = [

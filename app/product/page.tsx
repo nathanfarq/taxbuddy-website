@@ -17,9 +17,24 @@ import {
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-  title: 'How It Works — TaxBuddy',
+  title: 'How TaxBuddy Works — Agentic T1 Filing Software',
   description:
-    'A detailed look at how TaxBuddy works: client intake, AI-powered extraction and classification, and practitioner-led review and approval — with a full audit trail.',
+    "See how TaxBuddy's three-step workflow handles Canadian T1 filing: secure client intake, AI-powered CRA data extraction, and practitioner-led review with complete audit trails.",
+  keywords: ['agentic T1 filing', 'AI tax preparation', 'CRA tax software', 'T1 software'],
+  alternates: { canonical: '/product' },
+  openGraph: {
+    title: 'How TaxBuddy Works — Agentic T1 Filing Software',
+    description:
+      "See how TaxBuddy's three-step workflow handles Canadian T1 filing: secure client intake, AI-powered CRA data extraction, and practitioner-led review with complete audit trails.",
+    url: '/product',
+    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How TaxBuddy Works — Agentic T1 Filing Software',
+    description:
+      "See how TaxBuddy's three-step workflow handles Canadian T1 filing: secure client intake, AI-powered CRA data extraction, and practitioner-led review with complete audit trails.",
+  },
 };
 
 export default function ProductPage() {

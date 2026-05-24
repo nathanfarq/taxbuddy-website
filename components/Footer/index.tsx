@@ -16,18 +16,18 @@ export default function Footer() {
 
         <nav className={styles.links} aria-label="Footer navigation">
           <div className={styles.col}>
-            <p className={styles.colHead}>Product</p>
+            <h3 className={styles.colHead}>Product</h3>
             <Link href="/product" className={styles.link}>Overview</Link>
             <Link href="/contact" className={styles.link}>Book a demo</Link>
           </div>
           <div className={styles.col}>
-            <p className={styles.colHead}>Company</p>
+            <h3 className={styles.colHead}>Company</h3>
             <Link href="/about" className={styles.link}>About</Link>
             <Link href="/blog" className={styles.link}>Blog</Link>
             <Link href="/contact" className={styles.link}>Contact</Link>
           </div>
           <div className={styles.col}>
-            <p className={styles.colHead}>Legal</p>
+            <h3 className={styles.colHead}>Legal</h3>
             <Link href="/privacy" className={styles.link}>Privacy</Link>
             <Link href="/terms" className={styles.link}>Terms</Link>
           </div>

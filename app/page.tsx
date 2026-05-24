@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import HeroBanner from '@/components/HeroBanner';
@@ -11,6 +12,36 @@ import {
   IconUserCheck,
 } from '@tabler/icons-react';
 import styles from './page.module.css';
+
+export const metadata: Metadata = {
+  title: 'TaxBuddy — Agentic T1 Filing for Canadian Accounting Firms',
+  description:
+    'TaxBuddy automates T1 preparation for Canadian tax firms. Clients upload documents, AI agents extract and classify data, practitioners review and approve with full audit trails.',
+  keywords: ['Canadian tax firms', 'agentic T1 filing', 'AI tax preparation', 'T1 software', 'CRA tax software'],
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'TaxBuddy — Agentic T1 Filing for Canadian Accounting Firms',
+    description:
+      'TaxBuddy automates T1 preparation for Canadian tax firms. Clients upload documents, AI agents extract and classify data, practitioners review and approve with full audit trails.',
+    url: '/',
+    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'TaxBuddy — Agentic T1 Filing for Canadian Accounting Firms',
+    description:
+      'TaxBuddy automates T1 preparation for Canadian tax firms. Clients upload documents, AI agents extract and classify data, practitioners review and approve with full audit trails.',
+  },
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'TaxBuddy',
+  url: 'https://taxbuddy.online',
+  description: 'Agentic T1 filing software for Canadian accounting firms',
+  logo: 'https://taxbuddy.online/logo.png',
+} as const;
 
 const FEATURE_CARDS = [
   {
@@ -83,6 +114,10 @@ export default function HomePage() {
         <CTABanner />
       </main>
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
     </>
   );
 }

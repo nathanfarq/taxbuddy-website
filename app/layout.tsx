@@ -17,6 +17,7 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://taxbuddy.online'),
   title: 'TaxBuddy — Agentic T1 Filing for Canadian Accounting Firms',
   description:
     'TaxBuddy automates T1 preparation for Canadian tax firms. Clients upload documents, AI agents extract and classify data, and practitioners review and approve returns with full audit trails.',
@@ -28,6 +29,13 @@ export const metadata: Metadata = {
     siteName: 'TaxBuddy',
     locale: 'en_CA',
     type: 'website',
+    url: 'https://taxbuddy.online',
+    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'TaxBuddy — Agentic T1 Filing for Canadian Accounting Firms',
+    description: 'Automate T1 preparation. You stay in control. Built for Canadian accounting firms.',
   },
 };
 
