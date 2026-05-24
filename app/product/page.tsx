@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
+import ExpandableSection from '@/components/ExpandableSection';
 import {
   IconUpload,
   IconCpu,
@@ -185,6 +186,105 @@ export default function ProductPage() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 3 — Feature deep dives */}
+        <section className={`section ${styles.features}`}>
+          <div className="container">
+            <p className="label" style={{ marginBottom: 16 }}>Feature detail</p>
+            <h2 className={styles.featuresHeadline}>Under the hood</h2>
+            <p className={styles.featuresSubhead}>
+              Everything you need to evaluate TaxBuddy for your firm.
+            </p>
+
+            <div className={styles.accordion}>
+              <ExpandableSection title="Supported slip types" defaultOpen>
+                <p>
+                  TaxBuddy handles the slips that appear in the vast majority of T1 returns for
+                  individual Canadian taxpayers.
+                </p>
+                <ul>
+                  <li><strong>T4</strong> — employment income (Statement of Remuneration Paid)</li>
+                  <li><strong>T4A</strong> — pension, retirement, annuity, and other income</li>
+                  <li><strong>T4A(OAS) / T4A(P)</strong> — OAS and CPP/QPP payments</li>
+                  <li><strong>T4E</strong> — employment insurance benefits</li>
+                  <li><strong>T5</strong> — investment income (dividends, interest)</li>
+                  <li><strong>T3</strong> — trust income allocations</li>
+                  <li><strong>T2202</strong> — tuition and enrolment certificate</li>
+                  <li><strong>T4RSP / T4RIF</strong> — RRSP/RRIF income</li>
+                  <li><strong>RRSP contribution receipts</strong></li>
+                  <li><strong>Charitable donation receipts</strong></li>
+                </ul>
+                <p style={{ marginTop: 16 }}>
+                  Additional slip types are added on a rolling basis. Contact us if you have a
+                  specific slip type your client base relies on.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="Document handling and OCR">
+                <p>
+                  Clients upload files directly through the intake portal. TaxBuddy accepts PDF,
+                  JPG, and PNG — scanned paper documents included.
+                </p>
+                <ul>
+                  <li>OCR extracts text from scanned documents and image-based PDFs</li>
+                  <li>Each extracted value carries a confidence score</li>
+                  <li>Low-confidence fields are flagged and surfaced for practitioner review rather than silently assumed</li>
+                  <li>Original documents are preserved in full and linked to the fields they populated</li>
+                  <li>Clients receive confirmation when each document is received and processed</li>
+                </ul>
+              </ExpandableSection>
+
+              <ExpandableSection title="Agent processing pipeline">
+                <p>
+                  Document processing runs as a sequential pipeline of discrete agent steps. Each
+                  step is logged independently so you can inspect exactly what happened at any
+                  point.
+                </p>
+                <ul>
+                  <li><strong>Classify</strong> — identify document type and tax year</li>
+                  <li><strong>Extract</strong> — pull field values from each slip using OCR and layout understanding</li>
+                  <li><strong>Validate</strong> — cross-check extracted values against expected formats and ranges</li>
+                  <li><strong>Populate</strong> — map extracted values to the correct T1 schedule lines</li>
+                  <li><strong>Flag</strong> — surface discrepancies, missing documents, and low-confidence fields</li>
+                  <li><strong>Log</strong> — write a timestamped audit entry for every action taken</li>
+                </ul>
+                <p>
+                  The pipeline runs in parallel across all documents in a client&apos;s package.
+                  Processing time scales with document count, not practitioner attention.
+                </p>
+              </ExpandableSection>
+
+              <ExpandableSection title="Review and approval workflow">
+                <p>
+                  The practitioner review interface presents a pre-populated return with every
+                  field sourced, every flag surfaced, and every agent action available for
+                  inspection.
+                </p>
+                <ul>
+                  <li>Flagged items are grouped at the top of the review queue — you see the highest-priority issues first</li>
+                  <li>Click any field to see the source document, the page it came from, and the extraction confidence</li>
+                  <li>Override individual values without re-running the full pipeline</li>
+                  <li>Add practitioner notes that travel with the audit log</li>
+                  <li>Approval is explicit — no return leaves review without a practitioner sign-off</li>
+                </ul>
+              </ExpandableSection>
+
+              <ExpandableSection title="Audit trail and citations">
+                <p>
+                  Every action taken by TaxBuddy is logged, timestamped, and retained. The audit
+                  trail is not a summary — it is a complete record of what happened, when, and why.
+                </p>
+                <ul>
+                  <li>Every T1 field is cited back to its source document and page number</li>
+                  <li>Every agent action is logged with a timestamp and the input it acted on</li>
+                  <li>Practitioner overrides are recorded with the original value and the replacement</li>
+                  <li>The full audit log is exportable at any time — before, during, and after filing</li>
+                  <li>Retained for a minimum of seven years to support CRA reassessment requests</li>
+                </ul>
+              </ExpandableSection>
             </div>
           </div>
         </section>
