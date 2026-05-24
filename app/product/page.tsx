@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
+import CTABanner from '@/components/CTABanner';
 import ExpandableSection from '@/components/ExpandableSection';
 import {
   IconUpload,
@@ -390,6 +391,9 @@ export default function ProductPage() {
             </div>
           </div>
         </section>
+
+        {/* Section 5 — CTA */}
+        <CTABanner />
 
       </main>
       <Footer />

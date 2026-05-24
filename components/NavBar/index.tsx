@@ -7,7 +7,7 @@ import Button from '@/components/Button';
 import styles from './NavBar.module.css';
 
 const NAV_LINKS = [
-  { label: 'Product', href: '/product', disabled: true },
+  { label: 'Product', href: '/product' },
   { label: 'About', href: '/about' },
 ];
 
@@ -23,17 +23,11 @@ export default function NavBar() {
 
         {/* Desktop nav */}
         <nav className={styles.desktopNav} aria-label="Main navigation">
-          {NAV_LINKS.map((link) =>
-            link.disabled ? (
-              <span key={link.href} className={`${styles.navLink} ${styles.navLinkDisabled}`}>
-                {link.label}
-              </span>
-            ) : (
-              <Link key={link.href} href={link.href} className={styles.navLink}>
-                {link.label}
-              </Link>
-            )
-          )}
+          {NAV_LINKS.map((link) => (
+            <Link key={link.href} href={link.href} className={styles.navLink}>
+              {link.label}
+            </Link>
+          ))}
           <Button href="/contact" variant="primary">Book a demo</Button>
         </nav>
 
@@ -51,22 +45,16 @@ export default function NavBar() {
       {/* Mobile drawer */}
       {open && (
         <div className={styles.mobileNav} role="dialog" aria-modal="true" aria-label="Mobile navigation">
-          {NAV_LINKS.map((link) =>
-            link.disabled ? (
-              <span key={link.href} className={`${styles.mobileLink} ${styles.mobileLinkDisabled}`}>
-                {link.label}
-              </span>
-            ) : (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={styles.mobileLink}
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
-              </Link>
-            )
-          )}
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={styles.mobileLink}
+              onClick={() => setOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
           <div className={styles.mobileCta}>
             <Button href="/contact" variant="primary" fullWidth>Book a demo</Button>
           </div>
