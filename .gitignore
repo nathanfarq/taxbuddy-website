@@ -12,6 +12,11 @@ dist/
 node_modules/
 vendor/
 
+# Next.js
+.next/
+out/
+next-env.d.ts
+
 # Virtual environments
 .env/
 .venv/

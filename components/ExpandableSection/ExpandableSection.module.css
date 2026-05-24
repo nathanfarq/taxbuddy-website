@@ -1,0 +1,78 @@
+.item {
+  border-bottom: 1px solid var(--color-neutral-border);
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 16px;
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--color-primary-600);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-ink);
+  line-height: 1.4;
+}
+
+.chevron {
+  color: var(--color-neutral-slate);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.body {
+  padding-bottom: 24px;
+  font-size: 15px;
+  color: var(--color-neutral-muted);
+  line-height: 1.7;
+}
+
+.body p {
+  margin-bottom: 12px;
+}
+
+.body p:last-child {
+  margin-bottom: 0;
+}
+
+.body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.body li {
+  padding-left: 16px;
+  position: relative;
+  font-size: 15px;
+  color: var(--color-neutral-muted);
+  line-height: 1.6;
+}
+
+.body li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+}
