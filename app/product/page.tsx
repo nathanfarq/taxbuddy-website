@@ -6,6 +6,12 @@ import {
   IconUpload,
   IconCpu,
   IconCircleCheck,
+  IconShieldLock,
+  IconFingerprint,
+  IconRobot,
+  IconKey,
+  IconCertificate,
+  IconEye,
 } from '@tabler/icons-react';
 import styles from './page.module.css';
 
@@ -285,6 +291,102 @@ export default function ProductPage() {
                   <li>Retained for a minimum of seven years to support CRA reassessment requests</li>
                 </ul>
               </ExpandableSection>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 4 — Security */}
+        <section className={`section ${styles.security}`}>
+          <div className="container">
+            <p className="label" style={{ marginBottom: 16 }}>Security</p>
+            <h2 className={styles.securityHeadline}>Built with security from day one</h2>
+            <p className={styles.securitySubhead}>
+              Client data is confidential. We designed TaxBuddy with that constraint as a
+              first-class requirement, not an afterthought.
+            </p>
+
+            <div className={styles.securityGrid}>
+              <div className={styles.secCard}>
+                <div className={styles.secIcon}>
+                  <IconShieldLock size={22} stroke={1.5} />
+                </div>
+                <div>
+                  <h3 className={styles.secTitle}>Azure-hosted infrastructure</h3>
+                  <p className={styles.secDesc}>
+                    All processing and storage runs on Microsoft Azure in Canadian regions. Data
+                    is encrypted at rest (AES-256) and in transit (TLS 1.2+).
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.secCard}>
+                <div className={styles.secIcon}>
+                  <IconFingerprint size={22} stroke={1.5} />
+                </div>
+                <div>
+                  <h3 className={styles.secTitle}>PII redaction</h3>
+                  <p className={styles.secDesc}>
+                    Sensitive identifiers are redacted before leaving the processing boundary. We
+                    do not collect SINs or store raw personal identifiers beyond what CRA filing
+                    requires.
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.secCard}>
+                <div className={styles.secIcon}>
+                  <IconRobot size={22} stroke={1.5} />
+                </div>
+                <div>
+                  <h3 className={styles.secTitle}>No model training on your data</h3>
+                  <p className={styles.secDesc}>
+                    Client documents and extracted data are never used to train or fine-tune AI
+                    models — by TaxBuddy or any third-party provider. Data isolation is enforced
+                    per firm.
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.secCard}>
+                <div className={styles.secIcon}>
+                  <IconKey size={22} stroke={1.5} />
+                </div>
+                <div>
+                  <h3 className={styles.secTitle}>Access controls</h3>
+                  <p className={styles.secDesc}>
+                    Client and practitioner roles are fully separated. Clients can only see their
+                    own data. Practitioners access only the clients assigned to their firm. No
+                    cross-client visibility.
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.secCard}>
+                <div className={styles.secIcon}>
+                  <IconCertificate size={22} stroke={1.5} />
+                </div>
+                <div>
+                  <h3 className={styles.secTitle}>Compliance roadmap</h3>
+                  <p className={styles.secDesc}>
+                    SOC 2 Type II is on our roadmap. Current controls are documented and
+                    auditable. We&apos;ll share our security posture on request — reach out and
+                    we&apos;ll walk through it.
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.secCard}>
+                <div className={styles.secIcon}>
+                  <IconEye size={22} stroke={1.5} />
+                </div>
+                <div>
+                  <h3 className={styles.secTitle}>Full transparency</h3>
+                  <p className={styles.secDesc}>
+                    Every AI action is logged, timestamped, and explainable. No black-box outputs.
+                    You can inspect what the system did on any return at any time.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
