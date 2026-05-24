@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Instrument_Serif, Instrument_Sans } from 'next/font/google';
+import AppInsightsProvider from '@/components/AppInsightsProvider';
 import './globals.css';
 
 const instrumentSerif = Instrument_Serif({
@@ -42,7 +43,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-CA" className={`${instrumentSerif.variable} ${instrumentSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        <AppInsightsProvider>{children}</AppInsightsProvider>
+      </body>
     </html>
   );
 }
