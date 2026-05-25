@@ -38,7 +38,7 @@ export default function ContactPage() {
                 <h1 className={styles.headline}>Get in touch</h1>
                 <p className={styles.subhead}>
                   We are here for demo bookings, general questions, partnerships, and press.
-                  Pick a topic and we will get back to you within one business day.
+                  Pick a topic and we will get back to you shortly.
                 </p>
                 <div className={styles.directEmail}>
                   <p className={styles.directLabel}>Or email us directly</p>

@@ -34,6 +34,7 @@ export default function ContactForm() {
   const [data, setData] = useState<FormData>(INITIAL);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -42,15 +43,26 @@ export default function ContactForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
+    setError(false);
     try {
-      // TODO: wire Azure Function at /api/contact
-      await fetch('/api/contact', {
+      const res = await fetch(process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT!, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, reason }),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          ...data,
+          reason,
+          _subject: `[TaxBuddy] ${reason} — ${data.name}`,
+        }),
       });
+      if (!res.ok) {
+        setError(true);
+        setLoading(false);
+        return;
+      }
     } catch (_) {
-      // Form stub — Azure Function not yet deployed; show success regardless
+      setError(true);
+      setLoading(false);
+      return;
     }
     setLoading(false);
     setSubmitted(true);
@@ -61,7 +73,7 @@ export default function ContactForm() {
       <div className={styles.success}>
         <h3 className={styles.successTitle}>Message sent</h3>
         <p className={styles.successText}>
-          Thanks for reaching out. We&apos;ll be in touch within one business day.
+          Thanks for reaching out. We&apos;ll be in touch soon.
         </p>
       </div>
     );
@@ -135,6 +147,12 @@ export default function ContactForm() {
           className={styles.textarea}
         />
       </div>
+      {error && (
+        <p className={styles.errorText}>
+          Something went wrong — please try again or email us directly at{' '}
+          <a href="mailto:nathan@taxbuddy.online">nathan@taxbuddy.online</a>.
+        </p>
+      )}
       <Button type="submit" variant="primary" disabled={loading}>
         {loading ? 'Sending…' : 'Send message'}
       </Button>
