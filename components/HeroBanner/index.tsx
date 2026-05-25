@@ -12,11 +12,11 @@ export default function HeroBanner() {
         </h1>
         <p className={styles.subhead}>
           Clients upload documents, AI agents extract and classify data, and you
-          review and approve every return — with a full audit trail on every action.
+          review and approve every return. Every action has a full audit trail.
         </p>
         <div className={styles.ctas}>
           <Button href="/contact" variant="primary">Book a demo</Button>
-          <Button href="#how-it-works" variant="secondary">See how it works</Button>
+          <Button href="/product" variant="secondary">See how it works</Button>
         </div>
       </div>
     </section>

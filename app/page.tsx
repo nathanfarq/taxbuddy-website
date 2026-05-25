@@ -7,9 +7,10 @@ import FeatureCard from '@/components/FeatureCard';
 import TrustGrid from '@/components/TrustGrid';
 import CTABanner from '@/components/CTABanner';
 import {
-  IconInbox,
-  IconRobot,
-  IconUserCheck,
+  IconFolderSearch,
+  IconLayoutDashboard,
+  IconUsers,
+  IconClipboardList,
 } from '@tabler/icons-react';
 import styles from './page.module.css';
 
@@ -45,22 +46,28 @@ const organizationSchema = {
 
 const FEATURE_CARDS = [
   {
-    icon: IconInbox,
-    title: 'Document intake',
+    icon: IconFolderSearch,
+    title: 'Document discovery',
     description:
-      'Clients upload slips and docs through a secure portal. No more email chains and lost PDFs.',
+      'Clients upload files through a secure portal. Every slip is found, classified, and confirmed automatically. Nothing gets lost.',
   },
   {
-    icon: IconRobot,
-    title: 'AI-prepared returns',
+    icon: IconLayoutDashboard,
+    title: 'Your dashboard',
     description:
-      'Agents extract data, classify slips, populate schedules, and flag discrepancies. Full audit trail.',
+      'A firm-level view of every client\'s status, outstanding items, and progress through the pipeline. One place for everything.',
   },
   {
-    icon: IconUserCheck,
-    title: 'You stay in control',
+    icon: IconUsers,
+    title: 'Client portal',
     description:
-      'Every return goes through your review. You have decision-making authority on all deliverables.',
+      'Clients see exactly what was received and what is still needed. Fewer follow-up calls. Fewer missed slips.',
+  },
+  {
+    icon: IconClipboardList,
+    title: 'Full audit trail',
+    description:
+      'Every extraction, classification, and calculation is logged and cited back to its source. Reviewable at any time.',
   },
 ];
 
@@ -78,8 +85,8 @@ export default function HomePage() {
         {/* Section 3 — Feature cards */}
         <section className={`section ${styles.features}`}>
           <div className="container">
-            <p className="label" style={{ marginBottom: 16 }}>What TaxBuddy does</p>
-            <h2 className={styles.featuresHeadline}>Your expertise leads. AI handles the rest.</h2>
+            <p className="label" style={{ marginBottom: 16 }}>What you get</p>
+            <h2 className={styles.featuresHeadline}>Everything your firm needs. Nothing it doesn&apos;t.</h2>
             <div className={styles.featureGrid}>
               {FEATURE_CARDS.map((card) => (
                 <FeatureCard key={card.title} {...card} />

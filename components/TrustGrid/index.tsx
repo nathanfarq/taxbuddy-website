@@ -1,31 +1,35 @@
 import {
   IconShieldLock,
+  IconRobot,
   IconMapPin,
   IconClipboardList,
-  IconUsers,
 } from '@tabler/icons-react';
 import styles from './TrustGrid.module.css';
 
 const ITEMS = [
   {
     icon: IconShieldLock,
-    title: 'Encrypted and secure',
-    description: 'PII redacted, Azure-hosted, no model training on your data.',
+    title: 'Azure infrastructure',
+    description:
+      'All processing and storage runs on Microsoft Azure in Canadian regions. Encrypted at rest (AES-256) and in transit (TLS 1.2+).',
+  },
+  {
+    icon: IconRobot,
+    title: 'Your data. Never ours.',
+    description:
+      'Client documents are never used to train or fine-tune AI models. Data isolation is enforced per firm.',
   },
   {
     icon: IconMapPin,
     title: 'Canadian-first',
-    description: 'CRA forms, Canadian tax rules, and T1 schedules from day one.',
+    description:
+      'CRA forms, Canadian tax rules, and T1 schedules from day one. Built here. Not adapted from a US product.',
   },
   {
     icon: IconClipboardList,
     title: 'Full audit trail',
-    description: 'Every extraction, classification, and calculation is logged and citable.',
-  },
-  {
-    icon: IconUsers,
-    title: 'Scale your capacity',
-    description: 'Handle more clients without proportionally growing headcount.',
+    description:
+      'Every extraction, classification, and calculation is logged and citable. Reviewable at any time.',
   },
 ];
 

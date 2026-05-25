@@ -9,12 +9,12 @@
   font-weight: 400;
   color: var(--color-ink);
   margin-bottom: 48px;
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .featureGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
 
@@ -35,7 +35,7 @@
 .quoteText {
   font-family: var(--font-serif);
   font-size: clamp(1.125rem, 2vw, 1.375rem);
-  font-style: italic;
+  font-style: normal;
   color: var(--color-ink);
   line-height: 1.55;
 }
@@ -50,13 +50,12 @@
 
 @media (max-width: 900px) {
   .featureGrid {
-    grid-template-columns: 1fr;
-    max-width: 520px;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .featureGrid {
-    max-width: 100%;
+    grid-template-columns: 1fr;
   }
 }
