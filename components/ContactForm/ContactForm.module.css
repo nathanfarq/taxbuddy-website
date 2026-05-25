@@ -4,6 +4,37 @@
   gap: 20px;
 }
 
+.reasonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.reasonBtn {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 100px;
+  border: 1.5px solid var(--color-neutral-border);
+  background: transparent;
+  color: var(--color-neutral-muted);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.reasonBtn:hover {
+  border-color: var(--color-primary-600);
+  color: var(--color-primary-600);
+}
+
+.reasonBtnActive {
+  border-color: var(--color-primary-600);
+  background: var(--color-primary-600);
+  color: #fff;
+}
+
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -75,6 +106,12 @@
 .successText {
   font-size: 16px;
   color: var(--color-neutral-slate);
+}
+
+.errorText {
+  font-size: 14px;
+  color: #c0392b;
+  margin: 0;
 }
 
 @media (max-width: 640px) {

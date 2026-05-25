@@ -28,8 +28,8 @@ export default function Footer() {
           </div>
           <div className={styles.col}>
             <h3 className={styles.colHead}>Legal</h3>
-            <Link href="/privacy" className={styles.link}>Privacy</Link>
-            <Link href="/terms" className={styles.link}>Terms</Link>
+            <span className={styles.link}>Privacy</span>
+            <span className={styles.link}>Terms</span>
           </div>
         </nav>
 

@@ -49,8 +49,7 @@ export default function ProductPage() {
             <h1 className={styles.headline}>How TaxBuddy works</h1>
             <p className={styles.subhead}>
               Clients upload their documents, AI agents extract and classify every slip, and you
-              review and approve the finished return — with a complete audit trail from intake to
-              filing.
+              review and approve the finished return. Every action is tracked from intake to filing.
             </p>
           </div>
         </section>
@@ -70,12 +69,12 @@ export default function ProductPage() {
                 <span className={styles.stepNum}>01</span>
                 <h3 className={styles.stepTitle}>Client intake</h3>
                 <p className={styles.stepDesc}>
-                  Clients access a secure portal and upload their tax documents — no email
-                  attachments, no follow-up calls to track down missing slips.
+                  Clients access a secure portal to upload their tax documents. No email
+                  attachments. No follow-up calls to track down missing slips.
                 </p>
                 <ul className={styles.stepList}>
                   <li>Guided upload flow walks clients through each document type</li>
-                  <li>Accepts PDF, JPG, and PNG — scanned paper included</li>
+                  <li>Accepts PDF, JPG, and PNG. Scanned paper is supported.</li>
                   <li>Automatic receipt confirmation so clients know what was received</li>
                   <li>Practitioner is notified when a client&apos;s package is complete</li>
                 </ul>
@@ -151,15 +150,14 @@ export default function ProductPage() {
                 <span className={styles.stepNum}>02</span>
                 <h3 className={styles.stepTitle}>AI processing</h3>
                 <p className={styles.stepDesc}>
-                  Agents work through every document in parallel — classifying slip types,
-                  extracting values, populating T1 schedules, and flagging anything that needs a
-                  closer look.
+                  Agents work through every document in parallel. They classify slip types,
+                  extract values, populate T1 schedules, and flag anything that needs a closer look.
                 </p>
                 <ul className={styles.stepList}>
                   <li>Multi-step pipeline: classify → extract → validate → populate → flag</li>
                   <li>Each field is traced back to its source document and page number</li>
                   <li>Discrepancies and low-confidence extractions are surfaced for review</li>
-                  <li>Full audit log generated automatically — no manual documentation</li>
+                  <li>Full audit log generated automatically. No manual documentation.</li>
                 </ul>
               </div>
             </div>
@@ -170,14 +168,17 @@ export default function ProductPage() {
                 <span className={styles.stepNum}>03</span>
                 <h3 className={styles.stepTitle}>Your review</h3>
                 <p className={styles.stepDesc}>
-                  You see a pre-populated return with every field sourced and every agent action
-                  logged. Review, override anything you want, and approve when you&apos;re satisfied.
+                  The full return is prepared and sourced before it reaches your queue. Every field
+                  is logged. Every agent step is traceable. Review at your own pace, override
+                  anything, and file when you are satisfied. A complete, verified return is also
+                  your strongest tool for a meaningful conversation with your client.
                 </p>
                 <ul className={styles.stepList}>
+                  <li>Every return arrives complete. Every field is populated and sourced.</li>
                   <li>Click any field to see the source document and extraction confidence</li>
-                  <li>Override individual values without re-running the full pipeline</li>
-                  <li>Flagged items are grouped at the top of your review queue</li>
-                  <li>Your approval is the final step before filing prep</li>
+                  <li>Override values without re-running the pipeline</li>
+                  <li>Flagged items are grouped at the top for faster review</li>
+                  <li>File when satisfied. Your sign-off is the final step.</li>
                 </ul>
               </div>
               <div className={styles.stepScreen} aria-hidden="true">
@@ -204,7 +205,7 @@ export default function ProductPage() {
                   </div>
                   <div className={styles.mockApproveBtn}>
                     <IconCircleCheck size={16} stroke={1.5} />
-                    Approve return
+                    File return
                   </div>
                 </div>
               </div>
@@ -222,36 +223,27 @@ export default function ProductPage() {
             </p>
 
             <div className={styles.accordion}>
-              <ExpandableSection title="Supported slip types" defaultOpen>
+              <ExpandableSection title="Supported slip types">
                 <p>
-                  TaxBuddy handles the slips that appear in the vast majority of T1 returns for
-                  individual Canadian taxpayers.
+                  TaxBuddy handles all standard T-slip types issued to individual Canadian taxpayers
+                  for T1 personal income tax returns. Coverage spans employment income, investment
+                  income, pension and retirement income, government benefits, RRSP and RRIF activity,
+                  tuition, and charitable contributions.
                 </p>
-                <ul>
-                  <li><strong>T4</strong> — employment income (Statement of Remuneration Paid)</li>
-                  <li><strong>T4A</strong> — pension, retirement, annuity, and other income</li>
-                  <li><strong>T4A(OAS) / T4A(P)</strong> — OAS and CPP/QPP payments</li>
-                  <li><strong>T4E</strong> — employment insurance benefits</li>
-                  <li><strong>T5</strong> — investment income (dividends, interest)</li>
-                  <li><strong>T3</strong> — trust income allocations</li>
-                  <li><strong>T2202</strong> — tuition and enrolment certificate</li>
-                  <li><strong>T4RSP / T4RIF</strong> — RRSP/RRIF income</li>
-                  <li><strong>RRSP contribution receipts</strong></li>
-                  <li><strong>Charitable donation receipts</strong></li>
-                </ul>
                 <p style={{ marginTop: 16 }}>
-                  Additional slip types are added on a rolling basis. Contact us if you have a
-                  specific slip type your client base relies on.
+                  Slip coverage is updated on a rolling basis as new slip types are added and
+                  validated. Contact us if your client base relies on a slip type not yet supported.
+                  We will confirm current coverage and timeline.
                 </p>
               </ExpandableSection>
 
               <ExpandableSection title="Document handling and OCR">
                 <p>
                   Clients upload files directly through the intake portal. TaxBuddy accepts PDF,
-                  JPG, and PNG — scanned paper documents included.
+                  JPG, and PNG. Scanned paper documents are supported.
                 </p>
                 <ul>
-                  <li>OCR extracts text from scanned documents and image-based PDFs</li>
+                  <li>Optical character recognition (OCR) extracts text from scanned documents and image-based PDFs</li>
                   <li>Each extracted value carries a confidence score</li>
                   <li>Low-confidence fields are flagged and surfaced for practitioner review rather than silently assumed</li>
                   <li>Original documents are preserved in full and linked to the fields they populated</li>
@@ -279,31 +271,31 @@ export default function ProductPage() {
                 </p>
               </ExpandableSection>
 
-              <ExpandableSection title="Review and approval workflow">
+              <ExpandableSection title="Your review workflow">
                 <p>
                   The practitioner review interface presents a pre-populated return with every
                   field sourced, every flag surfaced, and every agent action available for
                   inspection.
                 </p>
                 <ul>
-                  <li>Flagged items are grouped at the top of the review queue — you see the highest-priority issues first</li>
+                  <li>Flagged items are grouped at the top of the review queue. You see the highest-priority issues first.</li>
                   <li>Click any field to see the source document, the page it came from, and the extraction confidence</li>
                   <li>Override individual values without re-running the full pipeline</li>
                   <li>Add practitioner notes that travel with the audit log</li>
-                  <li>Approval is explicit — no return leaves review without a practitioner sign-off</li>
+                  <li>Filing is explicit. No return leaves review without a practitioner sign-off.</li>
                 </ul>
               </ExpandableSection>
 
               <ExpandableSection title="Audit trail and citations">
                 <p>
                   Every action taken by TaxBuddy is logged, timestamped, and retained. The audit
-                  trail is not a summary — it is a complete record of what happened, when, and why.
+                  trail is not a summary. It is a complete record of what happened, when, and why.
                 </p>
                 <ul>
                   <li>Every T1 field is cited back to its source document and page number</li>
                   <li>Every agent action is logged with a timestamp and the input it acted on</li>
                   <li>Practitioner overrides are recorded with the original value and the replacement</li>
-                  <li>The full audit log is exportable at any time — before, during, and after filing</li>
+                  <li>The full audit log is exportable at any time. Before, during, and after filing.</li>
                   <li>Retained for a minimum of seven years to support CRA reassessment requests</li>
                 </ul>
               </ExpandableSection>
@@ -357,8 +349,7 @@ export default function ProductPage() {
                   <h3 className={styles.secTitle}>No model training on your data</h3>
                   <p className={styles.secDesc}>
                     Client documents and extracted data are never used to train or fine-tune AI
-                    models — by TaxBuddy or any third-party provider. Data isolation is enforced
-                    per firm.
+                    models. Data isolation is enforced per firm.
                   </p>
                 </div>
               </div>
@@ -385,8 +376,7 @@ export default function ProductPage() {
                   <h3 className={styles.secTitle}>Compliance roadmap</h3>
                   <p className={styles.secDesc}>
                     SOC 2 Type II is on our roadmap. Current controls are documented and
-                    auditable. We&apos;ll share our security posture on request — reach out and
-                    we&apos;ll walk through it.
+                    auditable. We&apos;ll share our security posture on request.
                   </p>
                 </div>
               </div>

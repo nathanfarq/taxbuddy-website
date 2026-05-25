@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Button from '@/components/Button';
 import styles from './ContactForm.module.css';
 
+type Reason = 'demo' | 'general' | 'partnership' | 'press';
+
 interface FormData {
   name: string;
   email: string;
@@ -11,12 +13,28 @@ interface FormData {
   message: string;
 }
 
+const REASONS: { value: Reason; label: string }[] = [
+  { value: 'demo', label: 'Book a demo' },
+  { value: 'general', label: 'General inquiry' },
+  { value: 'partnership', label: 'Partnership' },
+  { value: 'press', label: 'Press / media' },
+];
+
+const MESSAGE_PLACEHOLDER: Record<Reason, string> = {
+  demo: 'Tell us about your firm and what you are looking for...',
+  general: 'What can we help you with?',
+  partnership: 'Tell us about the integration or partnership you have in mind.',
+  press: 'What can we help with? We will route to the right person.',
+};
+
 const INITIAL: FormData = { name: '', email: '', firm: '', message: '' };
 
 export default function ContactForm() {
+  const [reason, setReason] = useState<Reason>('demo');
   const [data, setData] = useState<FormData>(INITIAL);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -25,15 +43,26 @@ export default function ContactForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
+    setError(false);
     try {
-      // TODO: wire Azure Function at /api/contact
-      await fetch('/api/contact', {
+      const res = await fetch(process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT!, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          ...data,
+          reason,
+          _subject: `[TaxBuddy] ${reason} — ${data.name}`,
+        }),
       });
+      if (!res.ok) {
+        setError(true);
+        setLoading(false);
+        return;
+      }
     } catch (_) {
-      // Form stub — Azure Function not yet deployed; show success regardless
+      setError(true);
+      setLoading(false);
+      return;
     }
     setLoading(false);
     setSubmitted(true);
@@ -44,7 +73,7 @@ export default function ContactForm() {
       <div className={styles.success}>
         <h3 className={styles.successTitle}>Message sent</h3>
         <p className={styles.successText}>
-          Thanks for reaching out. We&apos;ll be in touch within one business day.
+          Thanks for reaching out. We&apos;ll be in touch soon.
         </p>
       </div>
     );
@@ -52,6 +81,19 @@ export default function ContactForm() {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
+      <div className={styles.reasonGroup} role="group" aria-label="Reason for contact">
+        {REASONS.map((r) => (
+          <button
+            key={r.value}
+            type="button"
+            className={`${styles.reasonBtn} ${reason === r.value ? styles.reasonBtnActive : ''}`}
+            onClick={() => setReason(r.value)}
+          >
+            {r.label}
+          </button>
+        ))}
+      </div>
+
       <div className={styles.row}>
         <div className={styles.field}>
           <label htmlFor="name" className={styles.label}>Name</label>
@@ -99,12 +141,18 @@ export default function ContactForm() {
           name="message"
           required
           rows={5}
-          placeholder="Tell us about your firm and what you're looking for..."
+          placeholder={MESSAGE_PLACEHOLDER[reason]}
           value={data.message}
           onChange={handleChange}
           className={styles.textarea}
         />
       </div>
+      {error && (
+        <p className={styles.errorText}>
+          Something went wrong — please try again or email us directly at{' '}
+          <a href="mailto:nathan@taxbuddy.online">nathan@taxbuddy.online</a>.
+        </p>
+      )}
       <Button type="submit" variant="primary" disabled={loading}>
         {loading ? 'Sending…' : 'Send message'}
       </Button>

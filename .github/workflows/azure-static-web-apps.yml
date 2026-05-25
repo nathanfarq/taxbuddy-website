@@ -16,6 +16,11 @@ jobs:
           submodules: true
           lfs: false
 
+      - name: Deploy Formspree forms
+        run: npx @formspree/cli deploy
+        env:
+          FORMSPREE_DEPLOY_KEY: ${{ secrets.FORMSPREE_DEPLOY_KEY }}
+
       - name: Build And Deploy
         id: swa
         uses: azure/static-web-apps-deploy@v1
@@ -28,3 +33,4 @@ jobs:
           output_location: "out"
         env:
           IS_STATIC_EXPORT: true
+          NEXT_PUBLIC_FORMSPREE_ENDPOINT: ${{ secrets.FORMSPREE_ENDPOINT }}

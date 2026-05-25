@@ -17,6 +17,10 @@ vendor/
 out/
 next-env.d.ts
 
+# Environment files
+.env.local
+.env*.local
+
 # Virtual environments
 .env/
 .venv/

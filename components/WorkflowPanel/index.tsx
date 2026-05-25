@@ -18,7 +18,7 @@ const STEPS = [
     icon: IconCpu,
     title: 'AI processing',
     description:
-      'Agents extract data, classify slips, populate T1 schedules, and flag any discrepancies — with a full audit trail.',
+      'Agents classify slips, extract data, populate T1 schedules, and flag any discrepancies — with a full audit trail.',
   },
   {
     number: '03',

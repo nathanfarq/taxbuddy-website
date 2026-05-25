@@ -63,9 +63,9 @@
 }
 
 .stepTitle {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1.25rem, 2vw, 1.5rem);
-  font-weight: 400;
+  font-weight: 500;
   color: #fff;
   margin-bottom: 16px;
   line-height: 1.25;

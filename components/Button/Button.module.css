@@ -19,10 +19,12 @@
   background: var(--color-primary-600);
   color: #fff;
   border: 1.5px solid var(--color-primary-600);
+  box-shadow: 0 1px 3px rgba(106, 90, 205, 0.22), 0 1px 2px rgba(0, 0, 0, 0.06);
 }
 .primary:hover {
   background: var(--color-primary-700);
   border-color: var(--color-primary-700);
+  box-shadow: 0 3px 8px rgba(106, 90, 205, 0.28), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 /* Secondary — outline */
@@ -30,9 +32,11 @@
   background: transparent;
   color: var(--color-primary-600);
   border: 1.5px solid var(--color-primary-600);
+  box-shadow: 0 1px 3px rgba(106, 90, 205, 0.12), 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 .secondary:hover {
   background: var(--color-primary-50);
+  box-shadow: 0 3px 8px rgba(106, 90, 205, 0.16), 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 /* Ghost — for dark backgrounds */
@@ -40,10 +44,12 @@
   background: transparent;
   color: rgba(255, 255, 255, 0.85);
   border: 1.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
 }
 .ghost:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.22);
 }
 
 .fullWidth {
