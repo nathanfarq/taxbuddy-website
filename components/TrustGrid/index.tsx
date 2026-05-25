@@ -17,7 +17,7 @@ const ITEMS = [
     icon: IconRobot,
     title: 'Your data. Never ours.',
     description:
-      'Client documents are never used to train or fine-tune AI models. Data isolation is enforced per firm.',
+      'Client documents are never used to train or fine-tune AI models. Data isolation enforced for each firm.',
   },
   {
     icon: IconMapPin,

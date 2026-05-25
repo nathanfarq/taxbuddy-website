@@ -17,13 +17,13 @@ import styles from './page.module.css';
 export const metadata: Metadata = {
   title: 'TaxBuddy — Agentic T1 Filing for Canadian Accounting Firms',
   description:
-    'TaxBuddy automates T1 preparation for Canadian tax firms. Clients upload documents, AI agents extract and classify data, practitioners review and approve with full audit trails.',
+    'TaxBuddy automates T1 preparation for Canadian tax firms. Clients upload documents, AI agents classify and extract the data, practitioners review and approve with full audit trails.',
   keywords: ['Canadian tax firms', 'agentic T1 filing', 'AI tax preparation', 'T1 software', 'CRA tax software'],
   alternates: { canonical: '/' },
   openGraph: {
     title: 'TaxBuddy — Agentic T1 Filing for Canadian Accounting Firms',
     description:
-      'TaxBuddy automates T1 preparation for Canadian tax firms. Clients upload documents, AI agents extract and classify data, practitioners review and approve with full audit trails.',
+      'TaxBuddy automates T1 preparation for Canadian tax firms. Clients upload documents, AI agents classify and extract the data, practitioners review and approve with full audit trails.',
     url: '/',
     images: [{ url: '/og-default.png', width: 1200, height: 630 }],
   },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'TaxBuddy — Agentic T1 Filing for Canadian Accounting Firms',
     description:
-      'TaxBuddy automates T1 preparation for Canadian tax firms. Clients upload documents, AI agents extract and classify data, practitioners review and approve with full audit trails.',
+      'TaxBuddy automates T1 preparation for Canadian tax firms. Clients upload documents, AI agents classify and extract the data, practitioners review and approve with full audit trails.',
   },
 };
 
@@ -103,12 +103,12 @@ export default function HomePage() {
             </p>
             <blockquote className={styles.blockquote}>
               <p className={styles.quoteText}>
-                &ldquo;Tax season is brutal — not because of the work itself, but because of all the
+                &ldquo;Tax season is brutal. Not because of the work itself, but because of all the
                 coordination. Tracking down documents, chasing clients, making sure nothing slips
                 through. The actual returns are the easy part.&rdquo;
               </p>
               <footer className={styles.quoteAttrib}>
-                Canadian accounting firm, 2025 discovery interview
+                Canadian accounting firm
               </footer>
             </blockquote>
           </div>
